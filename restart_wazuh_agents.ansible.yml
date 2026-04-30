@@ -1,0 +1,12 @@
+---
+- name:  Restart Wazuh Agents
+  hosts: wazuh_agents
+  gather_facts: no
+  become: no
+  tasks:
+    - name: Restart Wazuh Agent Service
+      ansible.builtin.service:
+        name: wazuh-agent
+        state: restarted
+
+    
